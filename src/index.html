@@ -14,14 +14,6 @@
 
 <body>
 
-  <script>
-    window.onpageshow = (event) => { //prevent safari from caching
-      if (event.persisted) {
-        window.location.reload();
-      }
-    }
-  </script>
-
   <div id='cookie'></div>
 
   <!-- <div id='redirectButton'>Click me to redirect!</div> -->
@@ -30,10 +22,17 @@
       redirect to somewhere else!</a></p>
   <p><a href='http://localhost:9000/redirect'>Click me to
       redirect here!</a></p>
-  <p><a href='http://localhost:9000/ok'>Click me to
-      go somehwre!</a></p>
 
-  <script>
+  <p><a id="github">Click me to
+      go to GitHub!</a></p>
+
+  <script nonce='1234567890'>
+    var randomStr = Math.random().toString(36).substr(2, 5);
+    let githubLink = document.querySelector('#github');
+    githubLink.href = `https://github.com/login/oauth/authorize?client_id=e2dc2dfaf80e3195d532&redirect_uri=https://337e726f.ngrok.io/redirect&state=${randomStr}`
+  </script>
+
+  <script nonce='1234567890'>
 
     /*\
 |*|
@@ -110,7 +109,7 @@
     };
   </script>
 
-  <script>
+  <script nonce='1234567890'>
     console.log(document.cookie)
     let cookie = docCookies.getItem('session');
     let cookieContainer = document.querySelector('#cookie');
