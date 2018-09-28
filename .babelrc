@@ -1,0 +1,21 @@
+{
+    "presets": [
+      "env"
+    ],
+    "plugins": [
+      [
+        "module-resolver",
+        {
+          "root": [
+            "./"
+          ],
+          "alias": {
+            "ROOT_DIR": "./src"
+          }
+        }
+      ],
+      [
+        "transform-object-rest-spread"
+      ]
+    ]
+  }
