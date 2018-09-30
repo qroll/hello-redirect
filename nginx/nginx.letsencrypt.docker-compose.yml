@@ -1,0 +1,16 @@
+version: '3.5'
+services:
+  nginx:
+    build:
+      context: .
+      dockerfile: nginx.letsencrypt.Dockerfile
+    ports:
+      - 80:80
+    networks:
+      - app_network
+    volumes:
+      - ../data/etc/letsencrypt:/etc/letsencrypt
+      - ../data/tmp/letsencrypt/www:/tmp/letsencrypt/www
+networks:
+  app_network:
+    external: true
