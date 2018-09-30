@@ -1,15 +1,11 @@
-version: '3'
+version: '3.5'
 services:
   redirect:
     build: .
     ports:
       - 9000:9000
-  nginx:
-    build:
-      context: .
-      dockerfile: nginx.Dockerfile
-    ports:
-      - 80:80
-      - 443:443
-    links:
-      - redirect
+    networks:
+      - app_network
+networks:
+  app_network:
+    name: app_network
