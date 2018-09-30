@@ -6,7 +6,10 @@
   "scripts": {
     "babel": "npx babel src --out-dir lib",
     "build": "webpack --config webpack.config.js",
-    "redirect": "nodemon src/redirect.js --exec babel-node"
+    "redirect": "nodemon src/redirect.js --exec babel-node",
+    "red": "babel-node src/redirect.http2.js",
+    "red:dev": "nodemon src/redirect.http2.js --exec babel-node",
+    "oauth": "nodemon src/oauth.js --exec babel-node"
   },
   "author": "",
   "license": "ISC",
@@ -21,11 +24,12 @@
   "dependencies": {
     "cookie-parser": "^1.4.3",
     "cookie-session": "^2.0.0-beta.3",
-    "express": "^4.16.3",
+    "express": "^4.15.3",
+    "hapi": "^17.6.0",
     "helmet": "^3.13.0",
+    "inert": "^5.1.0",
     "node-apex-api-security": "^0.7.7",
     "node-fetch": "^2.2.0",
-    "nodemon": "^1.18.4",
-    "winston": "^2.4.2"
+    "nodemon": "^1.18.4"
   }
 }

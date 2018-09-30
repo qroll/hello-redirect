@@ -1,0 +1,15 @@
+version: '3'
+services:
+  redirect:
+    build: .
+    ports:
+      - 9000:9000
+  nginx:
+    build:
+      context: .
+      dockerfile: nginx.Dockerfile
+    ports:
+      - 80:80
+      - 443:443
+    links:
+      - redirect
