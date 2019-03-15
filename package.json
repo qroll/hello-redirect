@@ -28,8 +28,10 @@
     "hapi": "^17.6.0",
     "helmet": "^3.13.0",
     "inert": "^5.1.0",
+    "mysql2": "^1.6.1",
     "node-apex-api-security": "^0.7.7",
     "node-fetch": "^2.2.0",
-    "nodemon": "^1.18.4"
+    "nodemon": "^1.18.4",
+    "sequelize": "^4.41.0"
   }
 }

@@ -24,7 +24,7 @@ app.get('/signin', (req, res) => {
 
 app.get('/oauth/success', (req, res) => {
   let code = crypto.randomBytes(20).toString('hex');
-  res.setHeader('Location', 'https://337e726f.ngrok.io/redirect?code=' + code);
+  res.setHeader('Location', 'https://rollplays.me/redirect?code=' + code);
   res.status(302);
   res.json({});
 });
